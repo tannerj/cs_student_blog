@@ -1,9 +1,9 @@
 /*
 Theme Name: College STAR
-Theme URI: http://collegestar.ecu.edu
+Theme URI: http://students.collegestar.org
 Description: College STAR blog theme.
 Author: Tanner Jones
-Author URI: http://collegestar.ecu.edu
+Author URI: http://collegestar.org
 Version: 1.00
 */
 * {
@@ -654,7 +654,6 @@ ul.bio-excerpt, ul.bio-excerpt li {
   font-size: 1em;
 }
 
-
 .sts a.viewAll:link, .sts a.viewAll:visited, .sts a.viewAll:hover {
   position: absolute;
   top: 8px;
@@ -739,7 +738,6 @@ hr.latest-article {
   color: #F68D11;
   z-index: 1000;
 }
-
 
 #twitterFeed {
   height: 200px;
