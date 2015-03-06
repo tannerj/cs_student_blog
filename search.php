@@ -5,7 +5,7 @@ $search_query = array();
 ?>
 <?php get_header(); ?>
 <div id="contentWrapper">
-	<div id="content" class="main_right whole">
+  <div id="content" class="main_right whole">
     <h2>Search Results</h2>
     <ul>
     <?php
@@ -23,7 +23,7 @@ $search_query = array();
         echo "</ul>";
       }
     ?>
-	</div><!-- end content-->
+  </div><!-- end content-->
   <?php get_sidebar(); ?>
 </div><!-- end contentWrap -->
 <?php get_footer(); ?>
