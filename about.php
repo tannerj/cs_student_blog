@@ -3,6 +3,7 @@
 Template Name: About
 */
 ?>
+<!--Mahsa's first commit-->
 <?php get_header(); ?>
 <div id="contentWrapper">
   <div class="main_right whole">
