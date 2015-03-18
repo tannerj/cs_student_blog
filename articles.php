@@ -26,7 +26,7 @@ Template Name: Articles
 			$articles = query_posts( "cat=-{$bio},-{$sts}&posts_per_page=12" );
 			foreach( $articles as $article )
 			{
-				echo '<li><a href="'. get_permalink($article->ID) . '" >'. $article->post_title .'</a></li>';	
+echo <li><a href="'. get_permalink($article->ID) . '" >'. $article->post_title .'</a></li>';
 			}
 		?>
         </ul>
@@ -34,4 +34,3 @@ Template Name: Articles
     <?php get_sidebar(); ?>
 </div><!-- end contentWrap -->
 <?php get_footer(); ?>
-
