@@ -10,8 +10,7 @@ $latest_post = $latest_post[0]; //we only ask for one, get rid of wrapping array
 $latest_post_content = apply_filters('the_content', $latest_post['post_content']);
 ?>
 <?php get_header(); ?>
-<div id="contentWrapper">
-    
+<div id="contentWrapper">  
 <div class="main_right whole sts">
    	<h2>Student to Student</h2>
 	<a class=" viewAll" href="<?php echo get_bloginfo('url'); ?>/student-to-student">view all</a>
@@ -26,10 +25,14 @@ $latest_post_content = apply_filters('the_content', $latest_post['post_content']
    </div>
 
     <div id="update" class="main_right whole">
+	<?php 
+  	$custom_fields = get_post_custom($page->ID);
+  	$my_custom_field = $custom_fields['my_custom_field'];
+	?>  
     	<h2>Latest Article</h2>
 	<a class=" viewAll" href="<?php echo get_bloginfo('url'); ?>/articles">view all</a>
         <h3 class="latest-article"><?php echo $latest_post['post_title']; ?></h3>
-        <h4>By <b><?php the_author_meta('display_name', $latest_post['post_author']); ?></b> on <b><?php echo mysql2date('j M Y', $latest_post['post_date']); ?></b> Editor <b>Marell</b></h4>
+	<h4>By <b><?php echo $author=get_post_meta($post->ID, 'author', true) ?></b> on <b><?php echo mysql2date('j M Y', $latest_post['post_date']); ?></b> Editor <b><?php echo $editor=get_post_meta($post->ID, 'editor', true) ?></b></h4>
         <hr class="latest-article">
         <?php echo $latest_post_content; ?>
     </div>
