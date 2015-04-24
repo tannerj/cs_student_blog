@@ -24,11 +24,13 @@ Template Name: Articles
 			$bio = get_cat_ID('Contributor Biographies');
 			$sts = get_cat_ID('Student to Student');
 			$articles = query_posts( "cat=-{$bio},-{$sts}&posts_per_page=12" );
-			foreach( $articles as $article )
-			{
-				echo '<li><a href="'. get_permalink($article->ID) . '" >'. $article->post_title .'</a></li>';	
-			}
-		?>
+         ?>
+			<?php foreach( $articles as $article ): ?>
+			
+			<li><a href="<?php echo get_permalink($article->ID); ?>" ><img src="<?php echo bloginfo('template_url'); ?>/images/articles.jpg" title="<?php echo $article->post_title; ?>" alt="<?php echo $article->post_title; ?>" width="100" length="100ar"/><br><?php echo $article->post_title; ?></a></li>
+			
+                        <?php endforeach; ?>
+		
         </ul>
 	</div>
     <?php get_sidebar(); ?>
