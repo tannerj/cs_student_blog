@@ -26,9 +26,16 @@ Template Name: Articles
 			$articles = query_posts( "cat=-{$bio},-{$sts}&posts_per_page=12" );
          ?>
 			<?php foreach( $articles as $article ): ?>
+			<li><a href="<?php echo get_permalink($article->ID); ?>" >
+			<?php $postimageurl = get_post_meta($article->ID, 'post-img', true);
 			
-			<li><a href="<?php echo get_permalink($article->ID); ?>" ><img src="<?php echo bloginfo('template_url'); ?>/images/articles.jpg" title="<?php echo $article->post_title; ?>" alt="<?php echo $article->post_title; ?>" width="100" length="100ar"/><br><?php echo $article->post_title; ?></a></li>
-			
+			if ($postimageurl){ ?>
+				<a href="<?php echo get_permalink($article->ID); ?>" rel="bookmark"><img src="<?php echo $postimageurl; ?>" alt="<?php echo $article->post_title; ?>" width="100" height="80" length="100"/>
+			      <?php }
+			else { ?>
+      				<a href="<?php echo get_permalink($article->ID); ?>" rel="bookmark"><img src="<?php bloginfo('template_url'); ?>/images/articles.jpg" alt="<?php echo $article->post_title; ?>" width="100" height="80" length="100"/>
+			<?php } ?> 
+			<br><?php echo $article->post_title; ?></a></li>
                         <?php endforeach; ?>
 		
         </ul>
